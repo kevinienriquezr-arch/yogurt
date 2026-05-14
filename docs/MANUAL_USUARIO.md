@@ -114,7 +114,7 @@ Finalmente, cuando termine el tiempo de frío, llama a **`POST /api/batches/1/co
 
 *   **Búsquedas Eficientes:** Si en un futuro tienes decenas de recetas, no satures la red. Utiliza la ruta de búsqueda inteligente **`GET /api/recipes/search`** pasando una palabra clave como "fresa".
 *   **Actualizaciones Seguras (`PUT`):** Al actualizar datos de una receta (**`PUT /api/recipes/{id}`**), debes enviar el JSON íntegro. Si omites campos, el sistema podría sobrescribirlos con valores nulos o vacíos.
-*   **Eliminación Protectora (Soft Delete):** Para mantener la trazabilidad de lotes antiguos, el sistema no hace borrados físicos destructivos. Al llamar a **`DELETE /api/recipes/{id}`**, la receta simplemente pasa a un estado inactivo. Esto evita que pueda usarse para lotes nuevos, pero salvaguarda el historial de la base de datos.
+*   **Eliminación Protectora (Soft Delete):** Para mantener la trazabilidad de lotes antiguos, el sistema no hace borrados físicos destructivos. Al llamar a **`PATCH /api/recipes/{id}/deactivate`**, la receta simplemente pasa a un estado inactivo. Esto evita que pueda usarse para lotes nuevos, pero salvaguarda el historial de la base de datos.
 
 ---
 
